@@ -12,4 +12,4 @@ RUN npm install
 
 CMD ["nodemon",  "src/index.js"]
 
-EXPOSE "${HTTP_PORT_DAYS}"
+EXPOSE "${HTTP_PORT_RESTAPI}"

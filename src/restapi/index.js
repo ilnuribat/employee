@@ -1,10 +1,18 @@
+const http = require('http');
 const Koa = require('koa');
-const Router = require('koa-router');
-const bodyparser = require('koa-bodyparser');
+const Bluebird = require('bluebird');
+require('dotenv').config();
+
+Bluebird.promisifyAll(http.Server.prototype);
+
 
 const app = new Koa();
 
-// lots of middlewares
-app.use(bodyparser());
+async function start() {
+  const server = http.createServer(app.callback());
 
-// Как будут общаться сервисы?
+  await server.listen(process.env.HTTP_PORT_RESTAPI);
+  console.log(`service 'restapi' started at port ${process.env.HTTP_PORT_RESTAPI}`);
+}
+
+start();

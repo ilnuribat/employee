@@ -3,8 +3,6 @@ const Koa = require('koa');
 const Bluebird = require('bluebird');
 require('dotenv').config();
 
-const serviceName = 'EMPLOYEES';
-
 Bluebird.promisifyAll(http.Server.prototype);
 
 const app = new Koa();
@@ -19,8 +17,8 @@ app.use((ctx) => {
 async function start() {
   const server = http.createServer(app.callback());
 
-  await server.listen(process.env[`HTTP_PORT_${serviceName}`]);
-  console.log(`service ${serviceName} started at port ${process.env[`HTTP_PORT_${serviceName}`]}`);
+  await server.listen(process.env.HTTP_PORT_EMPLOYEES);
+  console.log(`service 'employee' started at port ${process.env.HTTP_PORT_EMPLOYEES}`);
 }
 
 start();

@@ -17,6 +17,14 @@ services:
       - "${HTTP_PORT_EMPLOYEES}:${HTTP_PORT_EMPLOYEES}"
     volumes:
       - ./src/employees:/app/src
+  restapi:
+    build:
+      context: .
+      dockerfile: restapi.Dockerfile
+    ports:
+      - "${HTTP_PORT_RESTAPI}:${HTTP_PORT_RESTAPI}"
+    volumes:
+      - ./src/restapi:/app/src
   # postgres:
   #   image: postgres:9.6
   #   restart: always

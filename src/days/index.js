@@ -17,7 +17,7 @@ app.use((ctx) => {
 
 async function start() {
   await server.listen(process.env.HTTP_PORT_DAYS);
-  console.log(`days' service started at port ${process.env.HTTP_PORT_DAYS}`);
+  console.log(`service 'days' started at port ${process.env.HTTP_PORT_DAYS}`);
 }
 
 start();
