@@ -9,6 +9,14 @@ services:
       - "${HTTP_PORT_DAYS}:${HTTP_PORT_DAYS}"
     volumes:
       - ./src/days:/app/src
+  employees:
+    build:
+      context: .
+      dockerfile: employees.Dockerfile
+    ports:
+      - "${HTTP_PORT_EMPLOYEES}:${HTTP_PORT_EMPLOYEES}"
+    volumes:
+      - ./src/employees:/app/src
   # postgres:
   #   image: postgres:9.6
   #   restart: always
