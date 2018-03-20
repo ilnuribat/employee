@@ -11,6 +11,7 @@ const server = http.createServer(app.callback());
 app.use((ctx) => {
   ctx.body = {
     result: 'OK',
+    key: 'value',
   };
 });
 

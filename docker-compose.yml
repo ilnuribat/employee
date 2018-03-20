@@ -7,8 +7,8 @@ services:
       dockerfile: days.Dockerfile
     ports:
       - "${HTTP_PORT_DAYS}:${HTTP_PORT_DAYS}"
-    # volumes:
-    #   - ./src/days:/app
+    volumes:
+      - ./src/days:/app/src
   # postgres:
   #   image: postgres:9.6
   #   restart: always

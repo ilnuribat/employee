@@ -8,7 +8,7 @@ COPY package*.json .env ./
 
 RUN npm install
 
-COPY src/days/ ./src
+# COPY src/days/ ./src
 
 CMD ["nodemon",  "src/index.js"]
 
