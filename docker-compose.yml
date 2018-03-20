@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: days.Dockerfile
     ports:
-      - 4000:4000
+      - "${HTTP_PORT_DAYS}:${HTTP_PORT_DAYS}"
     # volumes:
     #   - ./src/days:/app
   # postgres:
