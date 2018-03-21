@@ -12,6 +12,16 @@ const DaySchema = new Schema({
     type: Date,
     required: true,
   },
+  type: {
+    type: String,
+    enum: ['OFFICE', 'REMOTE', 'SICK', 'HOLIDAY'],
+    required: true,
+  },
+  duration: {
+    type: Number,
+    min: [1, 'measured in minutes, must be at least 1'],
+    max: [1440, 'measured in minutes, max value: 24 hours * 60 minutes = 1440'],
+  },
 });
 
 DaySchema.index({
