@@ -15,10 +15,13 @@ app.use((ctx) => {
 });
 
 async function start() {
+  const key = `service 'employee' started at port ${process.env.HTTP_PORT_EMPLOYEES}`;
+
+  console.time(key);
   const server = http.createServer(app.callback());
 
   await server.listen(process.env.HTTP_PORT_EMPLOYEES);
-  console.log(`service 'employee' started at port ${process.env.HTTP_PORT_EMPLOYEES}`);
+  console.timeEnd(key);
 }
 
 start();
