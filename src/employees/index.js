@@ -19,6 +19,7 @@ app.use(async (ctx) => {
     }
     ctx.body = await Handlers[action](data);
   } catch (err) {
+    console.log(err);
     ctx.status = 500;
     ctx.body = err;
   }

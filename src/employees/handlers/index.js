@@ -10,7 +10,7 @@ async function EDIT_EMPLOYEE(data) {
   return knex('Employee').update(data).where({ id: data.id }).returning('*');
 }
 
-async function GET_EMPLOYEE(data) {
+async function GET_EMPLOYEES(data) {
   const params = _.pick(data, ['id', 'email', 'name', 'phone', 'description']);
   const query = knex('Employee').select('*');
 
@@ -24,6 +24,6 @@ async function GET_EMPLOYEE(data) {
 module.exports = {
   ADD_EMPLOYEE,
   EDIT_EMPLOYEE,
-  GET_EMPLOYEE,
+  GET_EMPLOYEES,
 
 };

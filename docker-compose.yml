@@ -10,6 +10,8 @@ services:
     volumes:
       - ./src/days:/app/src
     restart: 'always'
+    network_mode: "host"
+
   employees:
     build:
       context: .
@@ -19,6 +21,8 @@ services:
     volumes:
       - ./src/employees:/app/src/employees
     restart: 'always'
+    network_mode: "host"
+
   restapi:
     build:
       context: .
@@ -28,6 +32,8 @@ services:
     volumes:
       - ./src/restapi:/app/src
     restart: 'always'
+    network_mode: "host"
+
   # postgres:
   #   image: postgres:9.6
   #   restart: always
