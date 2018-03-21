@@ -6,7 +6,7 @@
 {
   action: ADD_DAY,
   data: {
-    day: '2018-03-20',
+    date: '2018-03-20',
     employeeId: 'uuid',
     type: 'OFFICE|REMOTE|SICK|HOLIDAY',
     duration: 480
@@ -37,7 +37,7 @@
   action: EDIT_DAY,
   data: {
     employeeId: 'uuid',
-    day: '2018-03-20',
+    date: '2018-03-20',
     type: 'OFFICE|REMOTE|SICK|HOLIDAY',
     duration: 480
   }
@@ -51,7 +51,7 @@
   action: REMOVE_DAY,
   data: {
     employeeId: 'uuid',
-    day: '2018-03-20'
+    date: '2018-03-20'
   }
 }
 ```
