@@ -4,11 +4,11 @@ WORKDIR /app
 
 RUN npm install -g nodemon
 
-COPY package*.json .env ./
+COPY package*.json ./
 
 RUN npm install
 
-# COPY src/days/ ./src
+COPY .env .
 
 CMD ["nodemon",  "src/index.js"]
 
