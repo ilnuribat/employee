@@ -17,7 +17,25 @@ const employees = defaults.defaults({
 });
 
 module.exports = {
-  days,
-  employees,
+  days: {
+    async get(data) {
+      return days({
+        body: {
+          action: 'GET_DAYS',
+          data,
+        },
+      });
+    },
+  },
+  employees: {
+    async get(data) {
+      return employees({
+        body: {
+          action: 'GET_EMPLOYEES',
+          data,
+        },
+      });
+    },
+  },
 };
 
