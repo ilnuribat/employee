@@ -16,7 +16,7 @@ services:
     ports:
       - "${HTTP_PORT_EMPLOYEES}:${HTTP_PORT_EMPLOYEES}"
     volumes:
-      - ./src/employees:/app/src
+      - ./src/employees:/app/src/employees
   restapi:
     build:
       context: .

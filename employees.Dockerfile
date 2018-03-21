@@ -10,6 +10,6 @@ RUN npm install
 
 COPY .env .
 
-CMD ["nodemon",  "src/index.js"]
+CMD [ "bash", "-c", "cd src/employees && npx knex migrate:latest && nodemon index.js"]
 
 EXPOSE "${HTTP_PORT_DAYS}"
