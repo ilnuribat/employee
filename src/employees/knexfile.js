@@ -17,6 +17,7 @@ const config = {
   migrations: {
     tableName: 'knex_migrations',
     directory: path.resolve('migrations'),
+    stub: 'migration.stub.js',
   },
 };
 

@@ -7,7 +7,7 @@ Bluebird.promisifyAll(http.Server.prototype);
 
 const app = new Koa();
 
-app.use((ctx) => {
+app.use(async (ctx) => {
   ctx.body = {
     service: 'employees',
     result: 'ok',
