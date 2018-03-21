@@ -7,10 +7,23 @@ async function ADD_EMPLOYEE(data) {
 }
 
 async function EDIT_EMPLOYEE(data) {
-  return knex('Employee').update(_.omit(data, ['id'])).returning('*');
+  return knex('Employee').update(data).where({ id: data.id }).returning('*');
+}
+
+async function GET_EMPLOYEE(data) {
+  const params = _.pick(data, ['id', 'email', 'name', 'phone', 'description']);
+  const query = knex('Employee').select('*');
+
+  if (!_.isEmpty(params)) {
+    query.where(params);
+  }
+
+  return query;
 }
 
 module.exports = {
   ADD_EMPLOYEE,
   EDIT_EMPLOYEE,
+  GET_EMPLOYEE,
+
 };
