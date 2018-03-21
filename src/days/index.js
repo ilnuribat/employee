@@ -17,6 +17,9 @@ app.use(async (ctx) => {
   const { action, data } = ctx.request.body;
 
   try {
+    if (!Handlers[action]) {
+      throw new Error(`no such action: ${action}`);
+    }
     ctx.body = await Handlers[action](data);
   } catch (err) {
     ctx.status = 500;
